@@ -16,7 +16,7 @@
                 1 of 2
             </div>
             <div class="col">
-                2 of 2
+                2 of 2o
             </div>
         </div>
         <div class="row">
