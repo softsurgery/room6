@@ -24,7 +24,7 @@
                 1 of 5
             </div>
             <div class="col">
-                2 of 5
+                2 of 51
             </div>
             <div class="col">
                 3 of 5
