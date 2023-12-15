@@ -21,16 +21,19 @@
         </div>
         <div class="row">
             <div class="col">
-                1 of 4
+                1 of 5
             </div>
             <div class="col">
-                2 of 4
+                2 of 5
             </div>
             <div class="col">
-                3 of 4
+                3 of 5
             </div>
             <div class="col">
-                4 of 4
+                4 of 5
+            </div>
+            <div class="col">
+                5 of 5
             </div>
         </div>
     </div>
