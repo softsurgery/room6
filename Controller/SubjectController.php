@@ -1,9 +1,10 @@
 <?php
 
-require "../connect.php";
+require "../Config/connect.php";
 
 class SubjectController
 {
+
     protected $conn;
 
     public function __construct()

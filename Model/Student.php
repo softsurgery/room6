@@ -7,7 +7,6 @@ class Student {
     private $dob;
     private $section;
 
-    // Constructor
     public function __construct($id, $firstName, $lastName, $dob, $section) {
         $this->id = $id;
         $this->firstName = $firstName;
@@ -16,7 +15,6 @@ class Student {
         $this->section = $section;
     }
 
-    // Getter methods
     public function getId() {
         return $this->id;
     }
@@ -37,7 +35,6 @@ class Student {
         return $this->section;
     }
 
-    // Setter methods
     public function setFirstName($firstName) {
         $this->firstName = $firstName;
     }
@@ -55,7 +52,4 @@ class Student {
     }
 }
 
-// Example usage:
-$student1 = new Student(1, 'John', 'Doe', '2003-05-15', 'A');
-echo "Student 1: {$student1->getFirstName()} {$student1->getLastName()}, DOB: {$student1->getDob()}, Section: {$student1->getSection()}";
 ?>
