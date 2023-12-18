@@ -1,7 +1,7 @@
 <?php
 
-require_once "../Controller/SubjectController.php"; // Update with the correct path
-require_once "../Model/Subject.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/room6/Controller/SubjectController.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/room6/Model/Subject.php";
 
 $subjectController = new SubjectController();
 $subjects = $subjectController->listSubjects();

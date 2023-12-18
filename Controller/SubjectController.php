@@ -1,9 +1,9 @@
 <?php
 
-require "../Config/connect.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/room6/Controller/utils/connect.php";
 
-class SubjectController
-{
+
+class SubjectController{
 
     protected $conn;
 

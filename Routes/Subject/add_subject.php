@@ -1,7 +1,7 @@
 <?php
 
-require_once "../Controller/SubjectController.php";
-require_once "../Model/Subject.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/room6/Controller/SubjectController.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/room6/Model/Subject.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];

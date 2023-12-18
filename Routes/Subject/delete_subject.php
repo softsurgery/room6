@@ -1,6 +1,6 @@
 <?php
 
-require_once "../Controller/SubjectController.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/room6/Controller/SubjectController.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];

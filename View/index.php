@@ -40,7 +40,6 @@
             </tr>
         </thead>
         <tbody id="subjectTableBody">
-
         </tbody>
     </table>
 
@@ -52,7 +51,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '../Server/add_subject.php',
+                url: '../Routes/Subject/add_subject.php',
                 data: {
                     name: name,
                     description: description,
@@ -73,7 +72,7 @@
         function deleteSubject(subjectId) {
             $.ajax({
                 type: 'POST',
-                url: '../Server/delete_subject.php',
+                url: '../Routes/Subject/delete_subject.php',
                 data: {
                     id: subjectId
                 },
@@ -91,7 +90,7 @@
         function loadSubjects() {
             $.ajax({
                 type: 'GET',
-                url: '../Server/get_subjects.php',
+                url: '../Routes/Subject/get_subjects.php',
                 success: function(response) {
                     $('#subjectTableBody').html(response);
                 }
