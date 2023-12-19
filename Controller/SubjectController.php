@@ -1,19 +1,16 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT']."/room6/Controller/utils/connect.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/room6/utils/connect.php";
 
 
 class SubjectController{
-
     protected $conn;
-
-    public function __construct()
-    {
+    
+    public function __construct(){
         $this->conn = connect();
     }
 
-    public function listSubjects()
-    {
+    public function listSubjects(){
         try {
             $list = $this->conn->query("SELECT id, name, description, minimum_pricing FROM subjects");
             $subjects = [];
@@ -27,18 +24,17 @@ class SubjectController{
         }
     }
 
-    public function addSubject(Subject $subject)
-    {
-        $query = "INSERT INTO subjects (name, description, minimum_pricing) VALUES ('" . $subject->getName() . "', '" . $subject->getDescription() . "', '" . $subject->getMinimumPricing() . "')";
+    public function addSubject(Subject $subject){
+        $query = "INSERT INTO subjects (name, description, minimum_pricing) VALUES (?,?,?)";
         $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("sss", $subject->getName(), $subject->getDescription(), $subject->getMinimumPricing());
         $result = $stmt->execute();
         $success = $result && $stmt->affected_rows > 0;
         $stmt->close();
         return $success;
     }
 
-    public function deleteSubject($id)
-    {
+    public function deleteSubject($id){
         $id = $this->conn->real_escape_string($id);
         $query = "DELETE FROM subjects WHERE id = ?";
         $stmt = $this->conn->prepare($query);
@@ -49,8 +45,7 @@ class SubjectController{
     }
 
 
-    public function updateSubject(Subject $subject)
-    {
+    public function updateSubject(Subject $subject){
         $query = "UPDATE subjects SET name = ?, description = ?, minimum_pricing = ? WHERE id = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("sssi", $subject->getName(), $subject->getDescription(), $subject->getMinimumPricing(), $subject->getId());
@@ -60,8 +55,7 @@ class SubjectController{
         return $result ? true : false;
     }
 
-    public function searchSubjectById($id)
-    {
+    public function searchSubjectById($id){
         $id = $this->conn->real_escape_string($id);
         $query = "SELECT id, name, description, minimum_pricing FROM subjects WHERE id = ?";
         $stmt = $this->conn->prepare($query);
