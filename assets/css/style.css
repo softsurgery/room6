@@ -13,9 +13,10 @@ body {
   line-height: 1;
 }
 h1 {
-  font-size: 1.5em;
+  font-size: 1em;
   margin-bottom: 10px;
 }
+
 p {
   font-size: 1em;
   line-height: 1.3em;
@@ -187,12 +188,12 @@ select {
   left: 12px;
 }
 .wincontent {
-  width: min-content;
-  height: min-content;
   padding: 10px;
+  background-color: #c1c1c0;
   border: 2px solid #000;
   margin: 2px;
 }
+
 .windowHeader > strong {
   float: left;
   margin: 0px 3px 0 10px;
@@ -233,10 +234,6 @@ select {
   text-align: center;
 }
 
-.shortcut:hover {
-  background-color: #eee;
-}
-
 .shortcut img {
   max-width: 100%;
   height: auto;
@@ -270,14 +267,15 @@ select {
   width: 10%;
   display: grid;
   grid-template-columns: repeat(0, 1fr);
-  gap: 15px;
 }
 
 .icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 5px;
+  border-radius: 3px;
   display: flex;
+}
+
+.icon:hover {
+  background-color: #eee;
 }
 
 #icons a {
@@ -293,82 +291,4 @@ select {
   font-weight: bold;
   font-size: 15px;
   color: #30478c;
-}
-
-/*Demo styles BEGIN*/
-#window0 {
-  top: 20px;
-  left: 240px;
-}
-#window1 {
-  top: 400px;
-  left: 120px;
-}
-#window2 {
-  top: 250px;
-  left: 300px;
-}
-#window3 {
-  top: 125px;
-  left: 420px;
-}
-#window0 .wincontent {
-  width: 660px;
-  height: 400px;
-}
-#window1 .wincontent {
-  width: 500px;
-  height: 300px;
-}
-#window2 .wincontent {
-  width: 400px;
-  height: 350px;
-}
-#window3 .wincontent {
-  width: 400px;
-  height: 350px;
-}
-
-@media screen and (max-width: 960px) {
-  #window0 {
-    left: 10px;
-  }
-  #window3 {
-    left: 50px;
-  }
-}
-
-@media screen and (max-width: 770px) {
-  #window0 .wincontent {
-    width: 460px;
-  }
-  #window2 {
-    left: 100px;
-  }
-  #window1 {
-    top: 190px;
-    left: -5px;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  #window0 .wincontent {
-    width: 230px;
-    height: 200px;
-  }
-  #window3 .wincontent {
-    width: 275px;
-    height: auto;
-  }
-  #window3 {
-    top: 9px;
-    left: 10px;
-  }
-  #window2 {
-    left: -118px;
-  }
-  #window1 .wincontent {
-    width: auto;
-    height: 300px;
-  }
 }

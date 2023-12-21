@@ -71,4 +71,20 @@ class SubjectController{
             return null;
         }
     }
+
+    public function searchSubjectByName($name){
+        $name = "%" . $this->conn->real_escape_string($name) . "%";
+        $query = "SELECT id, name, description, minimum_pricing FROM subjects WHERE name = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            return new Subject($row['id'], $row['name'], $row['description'], $row['minimum_pricing']);
+        } else {
+            return null;
+        }
+    }
 }

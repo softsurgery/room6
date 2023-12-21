@@ -9,47 +9,73 @@
 	<link rel="canonical" href="https://html5-templates.com/" />
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="./assets/js/script.js"></script>
-	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+	<script src="./assets/js/plugins/window.js"></script>
 	<link rel="stylesheet" href="./assets/css/98.css" />
-
-	<title>Windows Template</title>
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+	<title>Room6 | Desktop</title>
 </head>
 
 <body>
 	<div id="desktop">
 
-		<div class="window" data-title="Welcome">
-			<h1>Subjects</h1>
-			<p>Minimize the windows to the taskbar, make them full screen or close them.</p>
-			<p>Drag the title bar to move the windows or resize them from the bottom right corner.</p>
-			<hr />
-			<p><strong>You can download and edit this template freely as long as you leave a visible link to
-					HTML5-Templates.com</strong></p>
-		</div>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/room6/View/Students/window.php" ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/room6/View/Subjects/window.php" ?>
 
 		<div id="taskbar">
 		</div>
 
 		<div id="icons">
+
 			<div class="icon">
-				<div class="shortcut">
-					<img src="./assets/images/help_book_cool-4.png" alt="Shortcut Icon">
-					<a class="openWindow" data-id="0">Subjects</a>
-				</div>
+				<a class="openWindow" data-id="0">
+					<div class="shortcut">
+						<img src="./assets/images/users-2.png" alt="Shortcut Icon">
+						Students
+					</div>
+				</a>
 			</div>
+
+			<div class="icon">
+				<a class="openWindow" data-id="1">
+					<div class="shortcut">
+						<img src="./assets/images/help_book_cool-4.png" alt="Shortcut Icon">
+						Subjects
+					</div>
+				</a>
+			</div>
+
+			<div class="icon">
+				<a class="openWindow" data-id="2">
+					<div class="shortcut">
+						<img src="./assets/images/directory_open_cool-0.png" alt="Shortcut Icon">
+						Documents
+					</div>
+				</a>
+			</div>
+
+			<div class="icon">
+				<a class="openWindow" data-id="3">
+					<div class="shortcut">
+						<img src="./assets/images/B7_U2avCIAAHrvO.png" alt="Shortcut Icon">
+						Python Compiler
+					</div>
+				</a>
+			</div>
+
+			
+
 		</div>
 	</div>
 	<script>
-        function updateGridColumns() {
-            const iconsContainer = document.getElementById('icons');
-            const screenWidth = window.innerWidth;
-            const numColumns = Math.floor(screenWidth / 100); 
-            iconsContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
-        }
-        window.addEventListener('resize', updateGridColumns);
-        updateGridColumns();
-    </script>
+		function updateGridColumns() {
+			const iconsContainer = document.getElementById('icons');
+			const screenWidth = window.innerWidth;
+			const numColumns = Math.floor(screenWidth / 100);
+			iconsContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
+		}
+		window.addEventListener('resize', updateGridColumns);
+		updateGridColumns();
+	</script>
 </body>
 
 </html>
