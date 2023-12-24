@@ -18,14 +18,21 @@
 <body>
 	<div id="desktop">
 
-		<?php include $_SERVER['DOCUMENT_ROOT'] . "/room6/View/Students/window.php" ?>
-		<?php include $_SERVER['DOCUMENT_ROOT'] . "/room6/View/Subjects/window.php" ?>
+
+		<!-- Students -->
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/room6/View/Students/mainwindow.php" ?>
+		
+		<!-- Subjects -->
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/room6/View/Subjects/mainwindow.php" ?>
+
+		<!-- Python -->
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/room6/View/Python/mainwindow.php" ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/room6/View/Python/packages.php" ?>
 
 		<div id="taskbar">
 		</div>
 
 		<div id="icons">
-
 			<div class="icon">
 				<a class="openWindow" data-id="0">
 					<div class="shortcut">
@@ -43,28 +50,25 @@
 					</div>
 				</a>
 			</div>
-
 			<div class="icon">
 				<a class="openWindow" data-id="2">
+					<div class="shortcut">
+						<img src="./assets/images/B7_U2avCIAAHrvO.png" alt="Shortcut Icon">
+						Python3
+					</div>
+				</a>
+			</div>
+			<!-- <div class="icon">
+				<a class="openWindow" data-id="3">
 					<div class="shortcut">
 						<img src="./assets/images/directory_open_cool-0.png" alt="Shortcut Icon">
 						Documents
 					</div>
 				</a>
-			</div>
-
-			<div class="icon">
-				<a class="openWindow" data-id="3">
-					<div class="shortcut">
-						<img src="./assets/images/B7_U2avCIAAHrvO.png" alt="Shortcut Icon">
-						Python Compiler
-					</div>
-				</a>
-			</div>
-
-			
-
+			</div> -->
 		</div>
+
+	</div>
 	</div>
 	<script>
 		function updateGridColumns() {

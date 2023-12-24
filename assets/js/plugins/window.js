@@ -56,8 +56,16 @@ function openWindow(id) {
     makeWindowActive(id);
     $("#window" + id).removeClass("closed");
     $("#minimPanel" + id).removeClass("closed");
+    var randomLeft = Math.floor(Math.random() * 40);
+    var randomTop = Math.floor(Math.random() * 40);
+
+    $("#window" + id).css({
+      left: randomLeft + "vw",
+      top: randomTop + "vh",
+    });
   }
 }
+
 function closeWindwow(id) {
   $("#window" + id).addClass("closed");
   $("#minimPanel" + id).addClass("closed");
@@ -100,22 +108,34 @@ $(document).ready(function () {
     }
     $(this).attr("id", "window" + i++);
     $(this).wrapInner(`<div class="wincontent" style="
-	min-height:${$(this).attr("m-height")};
-	min-width:${$(this).attr("m-width")}">
-	</div>`);
+	  min-height:${$(this).attr("min-height")};
+	  min-width:${$(this).attr("min-width")};
+    max-height:${$(this).attr("max-height")};
+    max-width:${$(this).attr("max-width")};
+    ">
+	  </div>`);
     $(this).prepend(`
-			<div class="title-bar">
-			<div class="title-bar-text">${$(this).attr("data-title")}</div>
-			<div class="title-bar-controls">
-				<span title="Minimize" class="winminimize">
-					<button aria-label="Minimize"></button>
-				</span>
-				<span title="Maximize" class="winmaximize">
-				<button aria-label="Maximize"></button>
-				</span>
-				<span title="Close" class="winclose"><button aria-label="Close"></button></span>
-				</div>
-			</div>`);
+    <div class="title-bar">
+        <div class="title-bar-text">${$(this).attr("data-title")}</div>
+        <div class="title-bar-controls">
+            <span title="Minimize" class="winminimize">
+                <button aria-label="Minimize"></button>
+            </span>
+            ${
+              $(this).attr("togglemax") == "true"
+                ? `
+                <span title="Maximize" class="winmaximize">
+                    <button aria-label="Maximize"></button>
+                </span>
+            `
+                : ""
+            }
+            <span title="Close" class="winclose">
+                <button aria-label="Close"></button>
+            </span>
+        </div>
+    </div>
+`);
   });
 
   $("#minimPanel" + (i - 1)).addClass("activeTab");
@@ -197,5 +217,3 @@ $(document).ready(function () {
   });
   adjustFullScreenSize();
 });
-
-

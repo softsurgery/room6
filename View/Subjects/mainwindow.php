@@ -1,4 +1,4 @@
-<div class="window closed" data-title="Subjects" m-width="300px" m-height="350px">
+<div class="window closed" data-title="Subjects" m-width="300px" m-height="350px" togglemax="true">
 
         <form>
             <fieldset>
